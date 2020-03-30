@@ -1,0 +1,143 @@
+---
+title: "R sessions"
+author: "Eric Macwan"
+date: "27/03/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+The R programming can be carried out as interative R-session. To start an R sisson, type 'R' from the command line in windows or linux OS. For example, from shell prompt '$' in lunux
+
+`$ R`
+
+This generates the following output before entering  '>' prompt of R:
+
+```
+R version 3.4.4 (2018-03-15) -- "Someone to Lean On"
+Copyright (C) 2018 The R Foundation for Statistical Computing
+Platform: x86_64-pc-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+>
+```
+
+Once we are inside an R session, we can directly execute R language commands by typing them line by line. Pressing the *return key* terminates typing of command and brings the > prompt again. In the example session below, we declare 2 variables 'a' and 'b' to have values 5 and 6 respectively, and assign their sum to another variable called 'res':
+
+```{r}
+a = 5
+b = 6
+c = a+b
+c
+```
+
+
+#### **To get help on any function of R**
+
+Type help(function-name) in R prompt. For example, if we need help on "if" logic, type,
+
+```{r}
+help("if")
+```
+
+then, manual of asked function is printed.
+
+
+#### **To exit the R session**
+
+Type quit() in R prompt, and say 'n' (no) for saving the workspace image. This means, we do not want to save the memory of all the commands we typed in the current session:
+
+`>quit()`
+
+`save workspace image? [y/n/c]: n `
+
+
+#### **Saving the R session** 
+
+Note that by not saving the current session, we loose all the memory of current session commands and the variables and objects created.
+  
+When we work in R, the R objects we created and loaded are stored in a memory portion called **workspace**. When we say 'no' to saving the workspace, all these objects are wiped out from the workspace memory. With 'yes', they are saved into a file called ".RData" is written to the present "working directory".
+  
+In Linux, this "working directory" is generally the directory from where the R was stared through command 'R'. In windows, it can be either "My Documents" or user's home directory.
+
+When we start R in the same crrent directory next time, the workspace and all the created objects are restored automatically from this ".RData" directory.
+
+#### **Listing the objects in the current R session**
+
+We can list the names of the objects in the current R session by `ls()` command. For example, start R session fresh and proceed as follows:
+
+```{r}
+a = 5
+b = 6
+c = 8
+sum = a+b+c
+
+sum
+```
+```{r}
+ls()
+```
+
+
+Here, Variable names created in current session is get printed.
+
+#### **Removing objects from the current R session**
+
+Specific object created in the current session can be removed using `rm()` command. If we specify the name of an object, it will be removed. If we just say `rm(list = las())`, all objects created so far will be removed. Example:
+
+```{r}
+a = 5
+b = 6
+c = 8
+sum = a+b+c
+
+sum
+```
+```{r}
+ls()
+```
+```{r}
+rm(list = c("sum"))
+
+ls()
+```
+```{r}
+rm(list = ls())
+
+ls()
+```
+
+#### **Getting and setting the current working directories**
+
+From R prompt, we can get information about the current working directory by `getwd()` command:
+
+```{r}
+getwd()
+```
+Similarly, we can set the current work directory by calling `setwd()` function:
+```{r}
+setwd("/home/eric/Documents/projects/")
+```
+
+```{r include=FALSE}
+setwd("/media/eric/nebula/projects/R_Fundamentals")
+```
+
