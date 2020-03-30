@@ -1,7 +1,4 @@
 ---
-title: "R sessions"
-author: "Eric Macwan"
-date: "27/03/2020"
 output: html_document
 ---
 
@@ -140,4 +137,10 @@ setwd("/home/eric/Documents/projects/")
 ```{r include=FALSE}
 setwd("/media/eric/nebula/projects/R_Fundamentals")
 ```
+After this, "/home/eric/Documents/projects/" will be the working directory.
 
+#### **Getting file information from R session**
+
+When we are inside R prompt, the operation system commands will not be recognised by R. If we want to list the names of files in the current directory in which R has been started, we should use `list.files()` command to list the files. This lists all the files in the current directory.
+
+In case we need infromation on a specific file, use `file.info("filename")` command. This prints all the information about this file on the screen.
