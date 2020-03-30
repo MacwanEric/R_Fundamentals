@@ -28,7 +28,7 @@ y
 ```
 Note the explicit usage of brackets for grouping the term to remove ambiguity
 
--A lost of useful inbuilt functions in R is given below:
+A lost of useful inbuilt functions in R is given below:
 
 ```
 Functions                   Description
